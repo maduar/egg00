@@ -18,7 +18,7 @@ class UploadController extends Controller {
         const target = path.join(images_path, filename);
         const writeStream = fs.createWriteStream(target);
 
-        const url_path = `http://${conifg.server_ip}:9999/images/${filename}`;
+        const url_path = `http://${conifg.server_ip}:9999/public/${filename}`;
 
         try {
             await awaitWriteStream(stream.pipe(writeStream));
